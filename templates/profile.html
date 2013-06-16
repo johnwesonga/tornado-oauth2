@@ -1,0 +1,16 @@
+{% extends "_base.html" %}
+
+{% block title %}Profile{% end %}
+
+{% block body %}
+<p>
+<img src='{{ profile["picture"] }}'/><br/>{{ profile["name"] }}<br/>{{ profile["link"] }}<br/>{{ profile["email"] }}<br/>
+
+
+
+<img src="{{ modules.Gravatar(profile['email'], 40, 'jpg') }}" width="40" alt="{{ escape(profile['email']) }}'s Avatar" >
+</p>
+
+<a href="/auth/logout">Log out</a>
+
+{% end %}
